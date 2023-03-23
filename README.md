@@ -1,4 +1,4 @@
-# 🔍 [nlpTool]
+# 🔍 [nlpTool] (blinded)
 
 This is an NLP-based LA Tool that offers the possibility to automatically:
 
