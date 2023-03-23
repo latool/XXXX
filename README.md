@@ -1,4 +1,4 @@
-# 🔍 [XXXX]
+# 🔍 [nlpTool]
 
 This is an NLP-based LA Tool that offers the possibility to automatically:
 
@@ -8,11 +8,11 @@ This is an NLP-based LA Tool that offers the possibility to automatically:
 
 ![Fig3 SystemArc](https://user-images.githubusercontent.com/91469248/226555819-8b9be44b-704f-40fe-9681-fbb26bfdaece.jpg)
 
-[XXXX] is an NLP-based ML extension for [LaTool] developed in Python (backend) and Streamlit4 (frontend) that extracts the content from a Portable Document Format (PDF) article and further identifies and categorizes keywords (LD-LA Instruments) from the extracted content based on instruments specified in its classifier. Figure above presents the working and system architecture of [XXXX] with our [LaTool], where the DB consists of manually harvested LA indicators and their metrics from LA literature and is aligned with LD events and activities presented in [LaTool].
+[nlpTool] is an NLP-based ML extension for [LaTool] developed in Python (backend) and Streamlit4 (frontend) that extracts the content from a Portable Document Format (PDF) article and further identifies and categorizes keywords (LD-LA Instruments) from the extracted content based on instruments specified in its classifier. Figure above presents the working and system architecture of [nlpTool] with our [LaTool], where the DB consists of manually harvested LA indicators and their metrics from LA literature and is aligned with LD events and activities presented in [LaTool].
 
-Figure above presents the working and system architecture of [XXXX] with our [LaTool], where the DB consists of manually harvested LA indicators and their metrics from LA literature and is aligned with LD events and activities presented in [LaTool].
+Figure above presents the working and system architecture of [nlpTool] with our [LaTool], where the DB consists of manually harvested LA indicators and their metrics from LA literature and is aligned with LD events and activities presented in [LaTool].
 
-[XXXX] has four main functionalities: text extraction, preprocessing, training the classifier, and displaying the extracted and processed results out of new (untagged) documents (see above Figure). First, [XXXX] reads the PDF articles and extracts the content/text from them, and converts them into pickle format (a Python object serialization that converts an object into a byte stream). We used the same articles and their features (LD-LA Instruments) as [2Blinded] which consists of 161 LA publications and their corresponding manually extracted and already aligned instruments i.e. LD events, LD-LA activities, LA indicators and metrics. Second, preprocessing is performed which includes four steps: 1. The extracted text is tokenized (to a list of words). 2. The stopwords that do not contain any meaning (e.g., the, it, etc.) and special characters and numbers are removed. 3. The words are converted to their base form by removing affixes called stemming (e.g., eating, eats, eaten to eat). [XXXX] offers two stemming algorithms PorterStemmer (which works best with any type of word and the one we used for training) and WordNetLemmatizer (which works best with verbs and particularly nouns). 4. Finally in preprocessing, with the help of our dataset (Data.json) words are assigned labels to indicate their semantic role (relationship). Every article (pickle file) name contains a reference number and each of the LA instruments in the DB (Data.json) have the same reference number, which helps the NLP classifier learn while assigning the labels. Third, in [XXXX] functionalities includes classifier training, where the tool checks for certain instruments/words from the DB in the extracted content/text and learns from it. The NLP classifier is trained using the Naive Bayes algorithm, a supervised
+[nlpTool] has four main functionalities: text extraction, preprocessing, training the classifier, and displaying the extracted and processed results out of new (untagged) documents (see above Figure). First, [nlpTool] reads the PDF articles and extracts the content/text from them, and converts them into pickle format (a Python object serialization that converts an object into a byte stream). We used the same articles and their features (LD-LA Instruments) as [2Blinded] which consists of 161 LA publications and their corresponding manually extracted and already aligned instruments i.e. LD events, LD-LA activities, LA indicators and metrics. Second, preprocessing is performed which includes four steps: 1. The extracted text is tokenized (to a list of words). 2. The stopwords that do not contain any meaning (e.g., the, it, etc.) and special characters and numbers are removed. 3. The words are converted to their base form by removing affixes called stemming (e.g., eating, eats, eaten to eat). [nlpTool] offers two stemming algorithms PorterStemmer (which works best with any type of word and the one we used for training) and WordNetLemmatizer (which works best with verbs and particularly nouns). 4. Finally in preprocessing, with the help of our dataset (Data.json) words are assigned labels to indicate their semantic role (relationship). Every article (pickle file) name contains a reference number and each of the LA instruments in the DB (Data.json) have the same reference number, which helps the NLP classifier learn while assigning the labels. Third, in [nlpTool] functionalities includes classifier training, where the tool checks for certain instruments/words from the DB in the extracted content/text and learns from it. The NLP classifier is trained using the Naive Bayes algorithm, a supervised
 ML learning algorithm mainly used for solving text classification problems that include a multi-dimensional training dataset, which is suitable for our [LaTool] dataset.
 
 Lastly, for displaying results, the user provides an unknown LA article the tool extracts, processes, and reads its content and with the help of the classifiers, the predicted results are shown to the user, where the ‘prediction’ value is a log-likelihood threshold (calculated by the NLP classifier, which indicates the accuracy of the result) the closer it is to zero the higher the accuracy (see Figure below).
@@ -20,7 +20,7 @@ Lastly, for displaying results, the user provides an unknown LA article the tool
 ![Fig4_Results](https://user-images.githubusercontent.com/91469248/226553770-7b41e509-71f4-4c97-9535-f080e059b4b9.png)
 
 
-## Getting Started with [XXXX]
+## Getting Started with [nlpTool]
 
 1. The first step is to create the project folder. The name is not important therefore you can name it as you like. I will use the name `main`.
    
@@ -32,7 +32,7 @@ Lastly, for displaying results, the user provides an unknown LA article the tool
    - The pdf files have to be inside the folder `main/pdfs/` and **need the correct structure with the citation nr in square brackets in front and a whitespace after it (e.g. [42] xyz.pdf)!** This is very important otherwise the training can't be done correctly.
    - The `data.json` file has to be inside the folder `main/`.
 
-3. Now you can clone the repository into a subfolder e.g. `[XXXX]` by 
+3. Now you can clone the repository into a subfolder e.g. `[nlpTool]` by 
    
    ```bash
    git clone git@github.com:latool/XXXX.git
@@ -42,7 +42,7 @@ Lastly, for displaying results, the user provides an unknown LA article the tool
 
 ```bash
 main
-+-- [XXXX]
++-- [nlpTool]
 +-- pdfs
     [1] foo.pdf
     [69] bar.pdf
