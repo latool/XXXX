@@ -6,7 +6,7 @@ This is an NLP-based LA Tool that offers the possibility to automatically:
 - identify keywords from text
 - categorize the text based on keywords
 
-![Fig3_LAxplore SystemArc](https://github.com/latool/nlpTool/assets/91469248/f5d8d454-8d64-4d7a-9dbf-4b3e736da632)
+![Fig3_LAxplore SystemArc](https://github.com/latool/nlpTool/assets/91469248/f1d8da1c-06d0-4745-b1f6-1b50e3990778)
 
 
 [nlpTool] is an NLP-based ML extension for [LaTool] developed in Python (backend) and Streamlit4 (frontend) that extracts the content from a Portable Document Format (PDF) article and further identifies and categorizes keywords (LD-LA Instruments) from the extracted content based on instruments specified in its classifier. Figure above presents the working and system architecture of [nlpTool] with our [LaTool], where the DB consists of manually harvested LA indicators and their metrics from LA literature and is aligned with LD events and activities presented in [LaTool].
